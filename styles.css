@@ -1,0 +1,134 @@
+:root {
+  --buttonColor: #008577;
+  --buttonHoverColor: #00af9c;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-family: sans-serif;
+}
+.note-list-container {
+  position: fixed;
+  height: 100vh;
+  width: 20vw;
+  text-align: center;
+  border-right: 3px solid #ededed;
+}
+.note-list {
+  /* must specify width and height for the scrollbar to work */
+  width: 20vw;
+  height: 80vh;
+  position: fixed;
+
+  /* the scrollbar is visible when needed */
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+}
+.note-preview {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+button {
+  cursor: pointer;
+  background-color: var(--buttonColor);
+  padding: 10px;
+  width: 90%;
+  margin: 10px 0;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+button:hover {
+  background-color: var(--buttonHoverColor);
+  transition: 200ms ease-out;
+}
+button:active {
+  opacity: 0.5;
+}
+
+#add-note {
+  margin-right: 20px;
+  float: right;
+  width: 10vw;
+}
+
+.note {
+  width: 85%;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.note:hover,
+.note.selected {
+  background-color: #ededed;
+  transition: background-color 300ms ease-out;
+}
+.selected {
+  font-weight: bold;
+}
+
+.note-title {
+  font-size: 1.75rem;
+  margin-bottom: 5px;
+}
+.note-content {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.timestamps {
+  text-align: right;
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+#inp-note-title,
+#inp-note-content {
+  margin: 20px 10px;
+  padding: 20px;
+  border: none;
+  /* the border showing when you write in an input tag */
+  outline: none;
+}
+#inp-note-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+#inp-note-content {
+  height: 20%;
+  font-size: 1.25rem;
+}
+
+.note-list::-webkit-scrollbar {
+  width: 1vw;
+}
+/* show the scroll bar only when we hover */
+.note-list:hover::-webkit-scrollbar-thumb {
+  background-color: #bbbb;
+}
+.note-list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.note.added {
+  animation: init 500ms ease-in;
+}
+@keyframes added {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

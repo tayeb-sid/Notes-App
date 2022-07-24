@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Notes</title>
+  </head>
+  <body>
+    <div style="width: 20vw; height: 100vh;">
+      <div class="note-list-container">
+        <button id="new-note-btn">
+          New note
+        </button>
+        <div class="note-list"></div>
+      </div>
+    </div>
+    <div class="note-preview">
+      <input type="text" id="inp-note-title" placeholder="Enter a title ..." />
+      <textarea
+        name="inp-note-content"
+        id="inp-note-content"
+        cols="30"
+        rows="10"
+        placeholder="Enter your note ..."
+      ></textarea>
+      <div>
+        <button id="add-note">add note</button>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
